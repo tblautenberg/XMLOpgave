@@ -45,11 +45,10 @@ namespace CursedShit
             {
                 using (XmlReader reader = XmlReader.Create(sr)) 
                 {
-                    reader.ReadToFollowing("person");
-                    reader.ReadToFollowing("name");
-                    Name = reader.ReadElementContentAsString();
-                    reader.ReadToFollowing("age");
-                    Age = reader.ReadElementContentAsInt();
+                    reader.ReadStartElement("person");
+                    Name = reader.ReadElementContentAsString("name", "");
+                    Age = reader.ReadElementContentAsInt("age", "");
+                    reader.ReadEndElement();
                 }
             }
         }

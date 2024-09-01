@@ -11,6 +11,7 @@ public class Program
 
         Weronika.FromXML(TobiasLol);
 
+        Console.WriteLine(Weronika.Name);
         Console.WriteLine(Weronika.Age);
 
 
